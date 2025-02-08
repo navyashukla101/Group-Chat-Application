@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const colors =require("colors");
 const userRoutes = require('./routes/userRoutes');
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
+//const path = require("path");
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ const app = express();
 app.use(express.json()); 
 
 app.get("/", (req,res) => {
-    res.send("API is Running Successfully");
+  res.send("API is Running Successfully");
 });
 
 app.use('/api/user',userRoutes);

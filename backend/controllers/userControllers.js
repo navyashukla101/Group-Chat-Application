@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400);
-    throw new Error("Failed to create the user");
+    throw new Error("User not found");
   }
 });
 
@@ -56,6 +56,12 @@ const authUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error("Invalid Email or Password");
   }
-})
+});
 
-module.exports = { registerUser, authUser };
+const allUsers = asyncHandler(async (req, res)=> {
+    const keyword = req.query.search;
+
+    console.log(keyword);
+});
+
+module.exports = { registerUser, authUser, allUsers };
