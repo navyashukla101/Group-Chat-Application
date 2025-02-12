@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Input,InputGroup, InputRightElement } from '@chakra-ui/input';
-import { VStack }  from  "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { useToast } from "@chakra-ui/toast";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
+import { VStack } from "@chakra-ui/layout";
+import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router";
-//import { ChatState } from "../../Conexdt/ChatProvider";
+import { useToast } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
+//import { ChatState } from "../../Conext/ChatProvider";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -40,7 +40,7 @@ const Login = () => {
       };
       const { data } = await axios.post(
         "/api/user/login",
-        {email, password},
+        { email, password },
         config
       );
       //console.log(data);
@@ -118,6 +118,5 @@ const Login = () => {
     </VStack>
   );
 };
-
 
 export default Login;
