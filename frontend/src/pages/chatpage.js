@@ -3,6 +3,7 @@ import { ChatState } from "../Context/ChatProvider";
 import SideDrawer from "../components/miscellaneous/SideDrawer";
 import MyChat from "../components/MyChat";
 import ChatBox from "../components/ChatBox";
+
 const Chatpage = () => {
    const { user } = ChatState();
 
@@ -11,7 +12,6 @@ const Chatpage = () => {
       <Box>
         {user && <MyChat />} 
         {user && <ChatBox />} 
-        console.log("chatpage");
       </Box>
     </div>
     );
