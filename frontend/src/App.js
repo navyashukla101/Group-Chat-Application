@@ -1,6 +1,8 @@
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import Chats from "./pages/chatpage";
+import background from "./Assets/background1.jpg";
 
 function App() {
   return (
