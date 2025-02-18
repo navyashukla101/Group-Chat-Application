@@ -16,7 +16,7 @@ const Chatpage = () => {
         justifyContent="space-between"
         //alignItems="center"
         width="100%"
-        bg="maroon"
+        bg="pink"
         height="91.5vh"
         padding="10px"
         //overflow="hidden"
