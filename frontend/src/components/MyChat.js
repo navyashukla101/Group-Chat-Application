@@ -9,11 +9,12 @@ import ChatLoading from './ChatLoading';
 import { getSender } from '../config/ChatLogics';
 import GroupChatModal from './miscellaneous/GroupChatModal';
 
-const MyChat = () => {
+const MyChat = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
 
   const toast = useToast();
+
   const fetchChats = async () => {
     // console.log(user._id);
     try {
@@ -41,7 +42,7 @@ const MyChat = () => {
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
-  }, [])
+  }, [fetchAgain]);
 
   return (
     <Box
@@ -80,7 +81,7 @@ const MyChat = () => {
         display="flex"
         flexDirection="column"
         p={3}
-        bg="pink"
+        bg="grey"
         w="100%"
         h="100%"
         borderRadius="lg"
